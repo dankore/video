@@ -51,7 +51,7 @@ body {
   outline: 0;
   padding: 0;
   cursor: pointer;
-  max-width: 50px;
+  font-size: 30px;
 }
 
 .player__button:focus {
@@ -65,22 +65,29 @@ body {
 
 .player__controls {
   display: flex;
+  justify-content: space-between;
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  transform: translateY(100%) translateY(-5px);
+  top: 50%;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*transform: translateY(100%) translateY(-px);*/
   transition: all .3s;
   flex-wrap: wrap;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.0);
+  font-size: 100px;
+}
+.volume-playbackRate {
+  display: flex;
 }
 
-.player:hover .player__controls {
-  transform: translateY(0);
-}
+/*.player:hover .player__controls {*/
+/*  transform: translateY(0);*/
+/*}*/
 
-.player:hover .progress {
-  height: 15px;
-}
+/*.player:hover .progress {*/
+/*  height: 15px;*/
+/*}*/
 
 .player__controls > * {
   flex: 1;
