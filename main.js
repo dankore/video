@@ -62,7 +62,6 @@ video.addEventListener('timeupdate', updateProgressbar);
 function scrub(e) {
     const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
     video.currentTime = scrubTime;
-    console.log(e)
 }
 
 let mousedown = false;
@@ -72,3 +71,20 @@ progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown =  false);
 
 
+//full screen
+const fullScreenButton = player.querySelector('.full-screen');
+
+fullScreenButton.addEventListener('click', openFullScreen);
+
+function openFullScreen(e) {
+
+    if(video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.mozRequestFullScreen) { /* Firefox */
+    video.mozRequestFullScreen();
+  } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) { /* IE/Edge */
+    video.msRequestFullscreen();
+  }
+}
