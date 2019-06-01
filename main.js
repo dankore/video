@@ -88,3 +88,25 @@ function openFullScreen(e) {
     video.msRequestFullscreen();
   }
 }
+
+//Player controls disappear after 5 seconds
+player.addEventListener('mousemove', displayControls);
+player.addEventListener('mouseout', hideControls);
+const playerControls = document.querySelector('.player__controls');
+
+
+function displayControls() {
+       playerControls.classList.add('active')
+       playerControls.classList.remove('disappear')
+      console.log('mouseover')
+};
+
+function hideControls() {
+    playerControls.classList.add('disappear');
+    playerControls.classList.remove('active')
+       console.log('mouseout')
+}
+
+
+
+
