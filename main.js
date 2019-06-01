@@ -4,7 +4,7 @@ const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
-const ranges = player.querySelectorAll('.player__slider');
+const volume = player.querySelector('.player__slider');
 
 function togglePlay() {
     const method = video.paused? 'play' : 'pause';
@@ -47,8 +47,8 @@ function updateRange() {
     video[this.name] = this.value
 }
 
-ranges.forEach(range => range.addEventListener('change', updateRange));
-ranges.forEach(range => range.addEventListener('mousemove', updateRange));
+volume.addEventListener('change', updateRange);
+volume.addEventListener('mousemove', updateRange);
 
 //Progress bar
 function updateProgressbar() {
@@ -77,7 +77,6 @@ const fullScreenButton = player.querySelector('.full-screen');
 fullScreenButton.addEventListener('click', openFullScreen);
 
 function openFullScreen(e) {
-
     if(video.requestFullscreen) {
     video.requestFullscreen();
   } else if (video.mozRequestFullScreen) { /* Firefox */
@@ -89,23 +88,29 @@ function openFullScreen(e) {
   }
 }
 
-//Player controls disappear after 5 seconds
+//Player controls disappear after few seconds
 player.addEventListener('mousemove', displayControls);
 player.addEventListener('mouseout', hideControls);
 const playerControls = document.querySelector('.player__controls');
+const volumeAndLargeScreen = document.querySelector('.volume-playbackRate');
 
 
 function displayControls() {
-       playerControls.classList.add('active')
-       playerControls.classList.remove('disappear')
-      console.log('mouseover')
+       playerControls.classList.add('active');
+       playerControls.classList.remove('disappear');
+       volumeAndLargeScreen.classList.add('active');
+       volumeAndLargeScreen.classList.remove('disappear');
 };
 
 function hideControls() {
+    volumeAndLargeScreen.classList.add('disappear');
+    volumeAndLargeScreen.classList.remove('active');
     playerControls.classList.add('disappear');
     playerControls.classList.remove('active')
-       console.log('mouseout')
 }
+
+
+
 
 
 
