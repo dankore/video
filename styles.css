@@ -81,10 +81,6 @@ body {
   display: flex;
   transform: translateY(100%) translateY(-4px);
 }
-/*.player:hover .player__controls {*/
-/*  opacity: 1;*/
-/*  transition: 0.3s ease-in-out;*/
-/*}*/
 
 .player__controls.active {
   opacity: 1;
