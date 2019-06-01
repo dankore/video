@@ -71,29 +71,32 @@ body {
   width: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /*transform: translateY(100%) translateY(-px);*/
-  transition: all .3s;
+  transform: translateX(-200%);
+  transition: all .6s;
   flex-wrap: wrap;
-  background: rgba(0,0,0,0.0);
+  background: rgba(0,0,0,0);
   font-size: 100px;
 }
 .volume-playbackRate {
   display: flex;
+  transform: translateY(100%) translateY(-5px);
+}
+.player:hover .player__controls {
+  transform: translateX(-50%);
+}
+.player:hover .volume-playbackRate {
+  transform: translateY(0);
 }
 
-/*.player:hover .player__controls {*/
-/*  transform: translateY(0);*/
-/*}*/
-
-/*.player:hover .progress {*/
-/*  height: 15px;*/
-/*}*/
+.player:hover .progress {
+  height: 15px;
+}
 
 .player__controls > * {
   flex: 1;
 }
 
-.progress {
+.progress{
   flex: 10;
   position: relative;
   display: flex;
