@@ -93,6 +93,8 @@ player.addEventListener('mousemove', displayControls);
 player.addEventListener('mouseout', hideControls);
 const playerControls = document.querySelector('.player__controls');
 const volumeAndLargeScreen = document.querySelector('.volume-playbackRate');
+const movieTitle = document.querySelector('.title');
+const twitter = document.querySelector('.twitter');
 
 
 function displayControls() {
@@ -100,6 +102,10 @@ function displayControls() {
        playerControls.classList.remove('disappear');
        volumeAndLargeScreen.classList.add('active');
        volumeAndLargeScreen.classList.remove('disappear');
+       movieTitle.classList.add('active');
+       movieTitle.classList.remove('disappear');
+       twitter.classList.add('active');
+       twitter.classList.remove('disappear');
 };
 
 function hideControls() {
@@ -107,6 +113,10 @@ function hideControls() {
     volumeAndLargeScreen.classList.remove('active');
     playerControls.classList.add('disappear');
     playerControls.classList.remove('active')
+    movieTitle.classList.add('disappear');
+    movieTitle.classList.remove('active');
+    twitter.classList.remove('active');
+    twitter.classList.add('disappear');
 }
 
 
